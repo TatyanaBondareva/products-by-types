@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Товары</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="sale"></div>
+<div id="promo"></div>
+<div id="recommended"></div>
+<!-- Ваш шаблон. Код можно менять тлько внутри этого тега <script>,
+остальной HTML трогать нельзя. -->
+<script type="text/template" id="productTemplate">
+	<div class="d-flex container mb-50">
+        <h3><%=template.title%></h3>
+        <ul class="list-inline d-flex justify-content-between">
+            <% template.items.map((item) => { %>
+            <li class="item col-md-3 col-sm-6 col-xs-12">
+                <img src="media/products/<%= item.pic %>" alt="" class="item__img">
+                <p class="item__description"><%= item.name %></p>
+                <p class="item__price">Цена: <%= item.price %>&#8381;</p>
+            </li>
+            <% }); %>
+       </ul>
+    </div>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
